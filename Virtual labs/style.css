@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Orbitron',sans-serif;
+    background:#050510;
+    color:white;
+    overflow:hidden;
+}
+
+/* ===== BACKGROUND ===== */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 30% 30%, #00ffff33, transparent 40%),
+    radial-gradient(circle at 70% 70%, #ff00ff22, transparent 40%),
+    radial-gradient(circle at 50% 50%, #00ff8833, transparent 50%);
+
+    animation: glow 8s infinite alternate;
+}
+
+@keyframes glow{
+    from{ filter:blur(20px); }
+    to{ filter:blur(70px); }
+}
+
+/* ===== HEADER ===== */
+
+header{
+    text-align:center;
+    padding:40px;
+    position:relative;
+}
+
+.back-btn{
+    position:absolute;
+    left:20px;
+    top:20px;
+    color:#00ffff;
+    text-decoration:none;
+}
+
+h1{
+    font-size:4rem;
+    color:#00ffff;
+    text-shadow:0 0 10px cyan,0 0 40px cyan;
+}
+
+.subtitle{
+    color:#ff00ff;
+    margin-top:10px;
+}
+
+.timebox{
+    margin-top:20px;
+    display:inline-block;
+    padding:15px 25px;
+    border:1px solid cyan;
+    border-radius:15px;
+    box-shadow:0 0 20px cyan;
+}
+
+.title{
+    font-size:.7rem;
+    color:#00ffff;
+    letter-spacing:3px;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    text-align:center;
+    padding:40px;
+}
+
+.hero h2{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+/* ===== GRID ===== */
+
+.lab{
+    padding:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.card{
+    padding:20px;
+    border:1px solid rgba(0,255,255,0.2);
+    background:rgba(255,255,255,0.05);
+    text-align:center;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px cyan;
+}
+
+/* ===== HOLOGRAM ===== */
+
+.holo-scene{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:300px;
+    height:300px;
+}
+
+/* орбиты */
+
+.orbit{
+    position:absolute;
+    border:1px solid rgba(0,255,255,0.4);
+    border-radius:50%;
+    animation: rotate linear infinite;
+}
+
+.orbit:nth-child(1){
+    width:120px;
+    height:120px;
+    top:90px;
+    left:90px;
+    animation-duration:6s;
+}
+
+.orbit:nth-child(2){
+    width:200px;
+    height:200px;
+    top:50px;
+    left:50px;
+    animation-duration:10s;
+}
+
+.orbit:nth-child(3){
+    width:280px;
+    height:280px;
+    top:10px;
+    left:10px;
+    animation-duration:14s;
+}
+
+@keyframes rotate{
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
+}
+
+/* ядро */
+
+.core{
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:cyan;
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 20px cyan,0 0 50px cyan;
+}
+
+/* формулы */
+
+.formula{
+    position:absolute;
+    color:#00ffff;
+    font-size:14px;
+    opacity:0;
+    animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp{
+    0%{ transform:translateY(0); opacity:0; }
+    20%{ opacity:1; }
+    100%{ transform:translateY(-200px); opacity:0; }
+}
